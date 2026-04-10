@@ -1,15 +1,32 @@
 {% extends 'base.html' %}
 {% block title %}Iniciar Sesión{% endblock %}
+
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-6">
-        <h2 class="mb-4">Iniciar Sesión</h2>
-
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-primary" type="submit">Entrar</button>
-        </form>
+    <div class="col-md-6 col-lg-4"> <div class="card shadow-lg border-0 p-4 p-md-5 mt-5">
+            
+            <div class="text-center mb-4">
+                <h2 class="text-primary fw-bold">Bienvenido</h2>
+                <p class="text-muted small">Ingresá tus credenciales para continuar</p>
+            </div>
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+                
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg fw-bold">Entrar</button>
+                </div>
+            </form>
+            
+            <div class="text-center mt-4">
+                <hr class="text-muted opacity-25">
+                <p class="mb-1 small">¿Aún no tenés cuenta?</p>
+                <a href="{% url 'registro' %}" class="text-primary text-decoration-none fw-bold">Registrate como profesional</a>
+            </div>
+            
+        </div>
     </div>
 </div>
 {% endblock %}

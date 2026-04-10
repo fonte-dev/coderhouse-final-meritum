@@ -6,7 +6,7 @@ from .models import Avatar
 
 class RegistroFormulario(UserCreationForm):
     email = forms.EmailField(
-        required=True, help_text="Requerido. Poné un email válido."
+        required=True, help_text="Obligatorio. Poné un email válido."
     )
 
     class Meta:
