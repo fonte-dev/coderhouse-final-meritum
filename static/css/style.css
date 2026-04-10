@@ -1,0 +1,94 @@
+
+body {
+    background-color: #f1f5f9;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    color: #334155;
+}
+
+
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 3px solid #0ea5e9;
+}
+.navbar-brand {
+    color: #0ea5e9 !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.nav-link {
+    color: #475569 !important;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #0ea5e9 !important;
+}
+
+.card {
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+    background-color: #ffffff;
+}
+
+.btn {
+    border-radius: 8px !important; 
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+.btn-primary {
+    background-color: #0ea5e9 !important;
+    border-color: #0ea5e9 !important;
+    color: white !important;
+}
+.btn-primary:hover {
+    background-color: #0284c7 !important;
+    border-color: #0284c7 !important;
+}
+
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    padding: 10px 15px;
+}
+.form-control:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25);
+}
+
+
+.card-img-top {
+    height: 220px; 
+    object-fit: cover; 
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #0f172a; 
+}
+
+.text-primary {
+    color: #0ea5e9 !important;
+}
+
+.btn-perfil-nav {
+    color: #0f172a !important;
+}
+
+.btn-perfil-nav:hover {
+    color: #ffffff !important;
+}

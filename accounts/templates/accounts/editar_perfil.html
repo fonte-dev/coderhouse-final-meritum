@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Editar Perfil{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">Editar Mis Datos</h3>
+                
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <h5 class="text-primary mt-3">Datos Personales</h5>
+                    {{ user_form.as_p }}
+                    
+                    <h5 class="text-primary mt-4 mb-3">Foto de Perfil</h5>
+
+                    <div class="text-center mb-4">
+                        {% if request.user.avatar.imagen %}
+                            <img src="{{ request.user.avatar.imagen.url }}" class="rounded-circle shadow" style="width: 150px; height: 150px; object-fit: cover;" alt="Avatar actual">
+                        {% else %}
+                            <img src="https://ui-avatars.com/api/?name={{ request.user.username }}&size=150&background=random" class="rounded-circle shadow" alt="Avatar Default">
+                        {% endif %}
+                    </div>
+
+                    <div class="alert alert-secondary text-center mb-4">
+                        <p class="mb-2"><strong>Subir nueva foto:</strong></p>
+                        {{ avatar_form.imagen }}
+                    </div>
+
+                    <h5 class="text-primary mt-4 mb-2">Sobre mí (Biografía)</h5>
+                    <div class="form-group mb-4">
+                        {{ avatar_form.biografia }}
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                    
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+                        <a href="{% url 'perfil' %}" class="btn btn-outline-secondary">Cancelar</a>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

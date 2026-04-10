@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ articulo.titulo }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="display-5 fw-bold">{{ articulo.titulo }}</h1>
+        <h3 class="text-muted">{{ articulo.subtitulo }}</h3>
+        <p class="text-secondary mb-4">
+            Publicado el {{ articulo.fecha }} por <strong>{{ articulo.autor.username }}</strong>
+        </p>
+
+        {% if articulo.imagen %}
+            <img src="{{ articulo.imagen.url }}" class="img-fluid rounded mb-4 w-100" alt="{{ articulo.titulo }}">
+        {% endif %}
+
+        <div class="fs-5">
+            {{ articulo.cuerpo|safe }}
+        </div>
+        
+        <div class="mt-5 d-flex gap-2">
+            <a href="{% url 'articulos' %}" class="btn btn-outline-secondary">&larr; Volver a Artículos</a>
+            
+            {% if request.user == articulo.autor %}
+                <a href="{% url 'articulo_editar' articulo.pk %}" class="btn btn-warning">Editar</a>
+                <a href="{% url 'articulo_eliminar' articulo.pk %}" class="btn btn-danger">Borrar</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
